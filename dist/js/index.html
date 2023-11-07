@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Vendor Billing</title>
+</head>
+<body class="bg-dark">
+    <div class="container bg-light p-4 rounded mt-5">
+        <h1 class="text-center text-primary">Vendor Billing</h1>
+        <form id="billing-form">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="product-select">Product</label>
+                    <select id="product-select" class="form-control">
+                        <option value="25.00">Sting (250 ml)</option>
+                        <option value="10.00">Lays</option>
+                        <option value="84.00">Dairy Milk (100 grms) </option>
+                        <option value="35.00">Notebook (90 pgs)</option>
+                        <option value="56.00">Notbook (160 pgs)</option>
+                        <option value="99.00">Pringles</option>
+                        <option value="350.00">Ferrero Rocher</option>
+                        <option value="125.00">Red Bull (350 ml)</option>
+                        <option value="10.00">Tata Glucose </option>
+                        <option value="30.00">Doritos</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" class="form-control" value="0" min="0" max="10">
+                </div>
+                <div class="form-group col-md-4">
+                    <label>&nbsp;</label>
+                    <button type="button" id="add-product" class="btn btn-primary btn-block">Add Product</button>
+                </div>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>MRP Price (₹)</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody id="product-list">
+                    <!-- Products will be dynamically added here -->
+                </tbody>
+            </table>
+            <div id="qr-scanner">
+                <p class="text-primary">Scan your ID Card QR or enter Student ID:</p>
+                <button id="scan-qr-button" class="btn btn-primary">Scan QR Code</button>
+                <div id="qr-input">
+                    <video id="qr-video" autoplay playsinline class="w-100"></video>
+                    <input type="text" id="manual-id" placeholder="Enter Student ID" class="form-control mt-2">
+                </div>
+                <div id="account-id" class="mt-2"></div>
+                <button id="confirm-payment" class="btn btn-success btn-block" disabled>Confirm Payment</button>
+            </div>
+            <p class="text-right font-weight-bold">Total Bill: ₹<span id="total">0.00</span></p>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@ericblade/quagga2@latest/dist/quagga.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="nandha.bundle.js"></script>
+    <script src="qr.js"></script>
+</body>
+</html>
